@@ -14,6 +14,12 @@ const styles = {
     paddingLeft: "15px",
     flexBasis: "auto",
   },
+  h1: {
+    color: "#ffffff",
+  },
+  h3: {
+    color: "#000000",
+  },
 };
 
 const useStyles = makeStyles(styles);
