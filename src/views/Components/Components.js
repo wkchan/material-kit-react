@@ -16,6 +16,9 @@ import Parallax from "components/Parallax/Parallax.js";
 // sections for this page
 import HeaderLinks from "components/Header/HeaderLinks.js";
 
+import image from "assets/img/my_pic_small.jpg";
+import imagesStyles from "assets/jss/material-kit-react/imagesStyles.js";
+
 // import SectionBasics from "./Sections/SectionBasics.js";
 // import SectionNavbars from "./Sections/SectionNavbars.js";
 // import SectionTabs from "./Sections/SectionTabs.js";
@@ -30,11 +33,14 @@ import HeaderLinks from "components/Header/HeaderLinks.js";
 // import SectionDownload from "./Sections/SectionDownload.js";
 
 import styles from "assets/jss/material-kit-react/views/components.js";
+// import classNames from "classnames";
 
 const useStyles = makeStyles(styles);
+const imgStyles = makeStyles(imagesStyles);
 
 export default function Components(props) {
   const classes = useStyles();
+  const imgClasses = imgStyles();
   const { ...rest } = props;
   return (
     <div>
@@ -50,15 +56,28 @@ export default function Components(props) {
         {...rest}
       />
       <Parallax image={require("assets/img/mt_taranaki.jpg").default}>
-        <div className={classes.container}>
+        <div className={classes.gridContainer}>
           <GridContainer>
-            <GridItem>
+            <GridItem xs={4} sm={4} className={imgClasses.marginLeft}>
+              <img
+                src={image}
+                alt="..."
+                className={
+                  imgClasses.imgRoundedCircle + " " + imgClasses.imgFluid
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={8}>
               <div className={classes.brand}>
                 <h1 className={classes.title}>My name is Linus Chan</h1>
                 <h3 className={classes.subtitle}>
                   A Developer who loves Data Engineering, Video Streaming
                   Technologies, and Cloud Technologies.
                 </h3>
+                <div className={classes.text}>
+                  This website is my latest side project. I will keep updating
+                  this page. Please come back later.
+                </div>
               </div>
             </GridItem>
           </GridContainer>

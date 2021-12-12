@@ -2,6 +2,15 @@ import { container } from "assets/jss/material-kit-react.js";
 
 const componentsStyle = {
   container,
+  gridContainer: {
+    ...container,
+    "@media (min-height: 320px)": {
+      paddingTop: "1rem",
+    },
+    "@media (min-height: 640px)": {
+      paddingTop: "2rem",
+    },
+  },
   brand: {
     color: "#FFFFFF",
     textAlign: "left",
@@ -11,13 +20,19 @@ const componentsStyle = {
     fontWeight: "600",
     display: "inline-block",
     position: "relative",
-    color: "#333333",
+    color: "#ffffff",
+    "@media (min-height: 320px)": {
+      fontSize: "2.4rem",
+    },
+    "@media (min-height: 640px)": {
+      fontSize: "3rem",
+    },
   },
   subtitle: {
     fontSize: "1.313rem",
     maxWidth: "500px",
     margin: "10px 0 0",
-    color: "#333333",
+    color: "#ffffff",
   },
   main: {
     background: "#FFFFFF",
